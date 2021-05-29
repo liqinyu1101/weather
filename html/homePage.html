@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>Weather</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/weah.css">
+    <link rel="stylesheet" href="../css/chart.css">
+    <script src="../node_modules/chart.js/dist/chart.min.js"></script>
+</head>
+<div id="app">
+    <header class="main night">
+        <div class="location-container">
+            <a href="#" class="arrow-icon"></a>
+            <div class="location-box">
+                <span class="location-icon">
+                </span>
+                <span class="location">
+                    <!-- 重庆市 北碚区 -->
+                </span>
+            </div>
+            <a href="#" class="share-icon"></a>
+        </div>
+        <div class="ct-state-box">
+            <div class="ct-state">
+                <p id="til"></p>
+                <p id="value"></p>
+            </div>
+        </div>
+        <p class="tem-box">
+        </p>
+        <p class="tem-des">
+        </p>
+        <div class="ct-wind-speed">
+            <p class="text"></p>
+            <p class="text show"></p>
+        </div>
+        <p class="tem-tips">
+        </p>
+        <div class="ct-landscape">
+            <div class="layer layer1"></div>
+            <div class="layer layer2" id="checked-bg"></div>
+            <div class="layer" id="layer3"></div>
+        </div>
+    </header>
+    <section id="sec-tomorrow" class="container">
+        <div class="wea-item">
+            <p class="today-p1">
+                <span>今天</span>
+                <span></span>
+            </p>
+            <p class="today-p2">
+                <span></span>
+                <span class="weatherFont wea-icon"></span>
+            </p>
+        </div>
+        <div class="line"></div>
+        <div class="wea-item">
+            <p class="tomor-p1">
+                <span>明天</span>
+                <span></span>
+            </p>
+            <p class="tomor-p2">
+                <span></span>
+                <span class="weatherFont wea-icon"></span>
+            </p>
+        </div>
+    </section>
+    <section id="sec-hours" class="container scroll1">
+        <ol class="hours-weather">
+
+        </ol>
+    </section>
+    <section id="sec-days" class="container scroll1">
+        <canvas id="myChart"></canvas>
+        <ol class="days-weather">
+
+        </ol>
+    </section>
+    <section id="sec-reminder" class="container">
+        <p class="banner">
+            <ul class="list1">
+                <li class="l-item">
+                    <div class="icon icon-chuanyi"></div>
+                    <p class="content chuanyi"></p>
+                    <p class="title">穿衣</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-yusan"></div>
+                    <p class="content yusan"></p>
+                    <p class="title">雨伞</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-ganmao"></div>
+                    <p class="content ganmao"></p>
+                    <p class="title">感冒</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-xiche"></div>
+                    <p class="content xiche"></p>
+                    <p class="title">洗车</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-yundong"></div>
+                    <p class="content">较不宜</p>
+                    <p class="title">运动</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-fangshai"></div>
+                    <p class="content fangshai"></p>
+                    <p class="title">防晒</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-diaoyu"></div>
+                    <p class="content diaoyu"></p>
+                    <p class="title">钓鱼</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-lvyou"></div>
+                    <p class="content lvyou"></p>
+                    <p class="title">旅游</p>
+                </li>
+            </ul>
+        </p>
+        <p class="banner">
+            <ul class="list2">
+                <li class="l-item">
+                    <div class="icon icon-jiaotong">
+                    </div>
+                    <p class="content">一般</p>
+                    <p class="title">交通</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-wuran"></div>
+                    <p class="content">良</p>
+                    <p class="title">空气污染及扩散条件</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-shushi"></div>
+                    <p class="content">舒适</p>
+                    <p class="title">舒适度</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-liangshai"></div>
+                    <p class="content liangshai"></p>
+                    <p class="title">晾晒</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-huazhuang"></div>
+                    <p class="content">去油</p>
+                    <p class="title">化妆</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-chenlian"></div>
+                    <p class="content chenlian"></p>
+                    <p class="title">晨练</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-guomin"></div>
+                    <p class="content">不易发</p>
+                    <p class="title">过敏</p>
+                </li>
+                <li class="l-item">
+                    <div class="icon icon-zhongshu"></div>
+                    <p class="content">无中暑风险</p>
+                    <p class="title">中暑</p>
+                </li>
+            </ul>
+        </p>
+
+    </section>
+    <div class="move-bar">
+        <span class="now"></span>
+        <span></span>
+    </div>
+    <footer>
+        <p>数据来源于实况天气接口</p>
+        <p class="me">copywriter @1996-∞ 江陵。</p>
+    </footer>
+</div>
+<div class="search-box" id="search">
+    <header class="ct-search">
+        <div class="input-keywords">
+            <span class="search-icon"></span>
+            <input type="text" id="i-location" placeholder="搜索地区" value="">
+        </div>
+        <div class="input-cancel">
+            <a class="btn-cancel">取消</a>
+        </div>
+    </header>
+    <div class="ct-wrapper">
+        <section class="history-wrapper" style="display: none;">
+            <p class="ct-title"></p>
+            <div class="loca-history wrap">
+
+            </div>
+        </section>
+        <section class="curloca-wrapper">
+            <p class="ct-title">当前定位</p>
+            <div class="cur-location wrap">
+                <div class="city cur"></div>
+            </div>
+        </section>
+        <section class="hotcity-wrapper">
+            <p class="ct-title">热门城市</p>
+            <div class="hot-cities wrap">
+                <!-- mock -->
+                <div class="city">北京</div>
+                <div class="city">上海</div>
+                <div class="city">广州</div>
+                <div class="city">深圳</div>
+                <div class="city">郑州</div>
+                <div class="city">西安</div>
+                <div class="city">南京</div>
+                <div class="city">杭州</div>
+                <div class="city">武汉</div>
+                <div class="city">成都</div>
+                <div class="city">沈阳</div>
+                <div class="city">天津</div>
+            </div>
+        </section>
+    </div>
+    <div class="search-result-wrap"></div>
+</div>
+
+<script src="../js/main.js" type="module"></script>
+<script>
+    (function () {
+        'use strict';
+
+        let months = JSON.parse(localStorage.getItem('hours'))
+        let {
+            month: days
+        } = months
+        let labels = [],
+            daylabel = [],
+            nightlabel = []
+        days.forEach(item => {
+            labels.push(item.date)
+            daylabel.push(item.day.temperature)
+            nightlabel.push(item.night.temperature)
+        });
+        console.log(daylabel)
+        let type = 'line';
+
+        let data = {
+            labels,
+            datasets: [{
+                    label: 'day',
+                    data: daylabel,
+                },
+                {
+                    label: 'night',
+                    data: nightlabel
+                }
+            ]
+        }
+
+        let ctx = document.getElementById('myChart').getContext('2d')
+        let chart = new Chart(ctx, {
+            type,
+            data,
+            options: {
+                title: {
+                    display: true,
+                    fontSize: '1.5vh'
+                },
+                elements: {
+                    line: {
+                        tension: 0
+                    }
+                },
+            }
+        })
+    })()
+</script>
+
+<body>
+
+</body>
+
+</html>

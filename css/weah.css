@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "weatherFont";
+  src: url('../fonts/weather/weather.woff2') format('woff2'),
+    url('../fonts/weather/weather.woff') format('woff'),
+    url('../fonts/weather/weather.ttf') format('truetype');
+}
+
+.weatherFont {
+  font-family: "weatherFont" !important;
+  font-style: normal;
+}
+
+.yueliang:before {
+  content: "\e6cc";
+}
+
+.yun-night:before {
+  content: "\e61b";
+}
+
+.qing:before {
+  content: "\e625";
+}
+
+.yun:before {
+  content: "\e627";
+}
+
+.yin:before {
+  content: "\e628";
+}
+
+.zhenyu:before {
+  content: "\e629";
+}
+
+.baoyu:before {
+  content: "\e62a";
+}
+
+.dabaoyu:before {
+  content: "\e62b";
+}
+
+.bingbao:before {
+  content: "\e62c";
+}
+
+.tedabaoyu:before {
+  content: "\e62d";
+}
+
+.yu:before {
+  content: "\e62e";
+}
+
+.dayu:before {
+  content: "\e62f";
+}
+
+.lei:before {
+  content: "\e630";
+}
+
+.yujiaxue:before {
+  content: "\e631";
+}
+
+.zhongyu:before {
+  content: "\e632";
+}
+
+.xue:before {
+  content: "\e633";
+}
+
+.xiaoxue:before {
+  content: "\e634";
+}
+
+.zhongxue:before {
+  content: "\e635";
+}
+
+.zhenxue:before {
+  content: "\e636";
+}
+
+.baoxue:before {
+  content: "\e637";
+}
+
+.qiangshachenbao:before {
+  content: "\e638";
+}
+
+.fuchen:before {
+  content: "\e639";
+}
+
+.wu:before {
+  content: "\e63a";
+}
+
+.shachen:before {
+  content: "\e63b";
+}
+
+.dongyu:before {
+  content: "\e63c";
+}
+
+.yangsha:before {
+  content: "\e63d";
+}
+
+.mai:before {
+  content: "\e63e";
+}
